@@ -1,5 +1,11 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let newArray = []
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      newArray.push(array[i] + array[j])
+    }
+  }
+  return newArray.some(element => element === target)
 }
 
 /* 
@@ -7,7 +13,15 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+description: write a function that takes two arguments, an array of numbers and a target number, and returns true if any pair of numbers within the array adds up to the target number.
+
+pseudocode steps:
+  1. iterate through the array
+  2. for each number in the array, find the sum of that number and each other number
+  3. compare the sum to target number.
+  4. if they equal each other, stop iterating
+  5. return true.
+  6. if no matches happen return false
 */
 
 /*
